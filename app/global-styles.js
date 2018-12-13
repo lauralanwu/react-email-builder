@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
     color: var(--primary-color);
+    overflow-x: hidden;
   }
 
   body {
@@ -22,16 +23,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
-  #app {
-    background-color: #fafafa;
-    min-height: 100%;
-    min-width: 100%;
-  }
-
   p,
   label {
     line-height: 1.5em;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

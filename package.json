@@ -4,13 +4,14 @@
   "description": "React.js based email template builder",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "git://github.com/laurawulan/react-email-builder.git"
   },
   "engines": {
     "npm": ">=5",
     "node": ">=8.10.0"
   },
-  "author": "Laura Wu",
+  "author": "Laura Lan Wu",
+  "email": "laura.lan.wu@gmail.com",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
@@ -26,7 +27,7 @@
     "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
     "start:prod": "cross-env NODE_ENV=production node server",
-    "presetup": "yarn add chalk shelljs",
+    "presetup": "npm i chalk shelljs",
     "setup": "node ./internals/scripts/setup.js",
     "clean": "shjs ./internals/scripts/clean.js",
     "clean:all": "npm run analyze:clean && npm run test:clean && npm run build:clean",

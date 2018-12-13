@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export default styled(Link)`
   display: inline-flex;
@@ -19,4 +19,4 @@ export default styled(Link)`
     background: #41addd;
     color: #fff;
   }
-`;
+`
