@@ -6,20 +6,20 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import styled from 'styled-components'
-import { Switch, Route } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import HomePage from 'containers/HomePage/Loadable'
-import FeaturePage from 'containers/FeaturePage/Loadable'
-import NotFoundPage from 'containers/NotFoundPage/Loadable'
-import Header from 'components/Header'
-import Nav from 'components/Nav'
-import Footer from 'components/Footer'
+import HomePage from 'containers/HomePage/Loadable';
+import FeaturePage from 'containers/FeaturePage/Loadable';
+import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Header from 'components/Header';
+import Nav from 'components/Nav';
+import Footer from 'components/Footer';
 
-import GlobalStyle from '../../global-styles'
+import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 1em * 2);
@@ -29,15 +29,15 @@ const AppWrapper = styled.div`
   flex-direction: column;
   background-color: #fafafa;
   height: 100%;
-`
+`;
 
 const RouterWrapper = styled.div`
   flex-grow: 1;
-`
+`;
 
 RouterWrapper.propTypes = {
   role: PropTypes.string,
-}
+};
 
 export default function App() {
   return (
@@ -60,5 +60,5 @@ export default function App() {
       <Footer />
       <GlobalStyle />
     </AppWrapper>
-  )
+  );
 }

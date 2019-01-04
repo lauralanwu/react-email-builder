@@ -19,14 +19,9 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
-// import H2 from 'components/H2';
-// import ReposList from 'components/ReposList';
-// import AtPrefix from './AtPrefix';
+import TreeView from 'components/Tree/TreeView';
 import CenteredSection from './CenteredSection';
-// import Form from './Form';
-// import Input from './Input';
 import Section from './Section';
-// import messages from './messages';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
@@ -45,13 +40,30 @@ export class HomePage extends React.PureComponent {
   }
 
   render() {
-    const { loading, error, repos } = this.props;
-    // eslint-disable-next-line no-unused-vars
-    const reposListProps = {
-      loading,
-      error,
-      repos,
-    };
+    // const { loading, error } = this.props;
+
+    const tree = [
+      {
+        value: 'Parent A',
+        nodes: [{ value: 'Child A' }, { value: 'Child B' }],
+      },
+      {
+        value: 'Parent B',
+        nodes: [
+          {
+            value: 'Child C',
+          },
+          {
+            value: 'Parent C',
+            nodes: [
+              { value: 'Child D', id: 'example-id' },
+              { value: 'Child E' },
+              { value: 'Child F' },
+            ],
+          },
+        ],
+      },
+    ];
 
     return (
       <article>
@@ -91,6 +103,11 @@ export class HomePage extends React.PureComponent {
               </label>
             </Form>
             <ReposList {...reposListProps} /> */}
+            <TreeView
+              defaultExpanded
+              onLeafClick={node => alert(JSON.stringify(node))}
+              tree={tree}
+            />
           </Section>
         </div>
       </article>
@@ -99,9 +116,9 @@ export class HomePage extends React.PureComponent {
 }
 
 HomePage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+  // loading: PropTypes.bool,
+  // error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  // repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
   // onChangeUsername: PropTypes.func,
